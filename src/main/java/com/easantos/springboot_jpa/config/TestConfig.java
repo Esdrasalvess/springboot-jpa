@@ -63,6 +63,17 @@ public class TestConfig implements CommandLineRunner{
 		((ListCrudRepository<User, Long>) userRepository).saveAll(Arrays.asList(u1,u2));
 		((ListCrudRepository<Order, Long>) orderRepository).saveAll(Arrays.asList(o1,o2, o3));
 		((ListCrudRepository<Product, Long>) productRepository).saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+		
+		p1.getCategories().add(cat2);
+		p2.getCategories().add(cat1);
+		p2.getCategories().add(cat3);
+		p3.getCategories().add(cat3);
+		p4.getCategories().add(cat3);
+		p5.getCategories().add(cat2);
+		
+		((ListCrudRepository<Product, Long>) productRepository).saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+		
+
 
 	}
 	
