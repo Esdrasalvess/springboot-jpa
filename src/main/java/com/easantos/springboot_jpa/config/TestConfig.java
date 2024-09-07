@@ -12,6 +12,7 @@ import org.springframework.data.repository.ListCrudRepository;
 import com.easantos.springboot_jpa.entities.Category;
 import com.easantos.springboot_jpa.entities.Order;
 import com.easantos.springboot_jpa.entities.OrderItem;
+import com.easantos.springboot_jpa.entities.Payment;
 import com.easantos.springboot_jpa.entities.Product;
 import com.easantos.springboot_jpa.entities.User;
 import com.easantos.springboot_jpa.entities.enums.OrderStatus;
@@ -88,7 +89,9 @@ public class TestConfig implements CommandLineRunner{
 		((ListCrudRepository<OrderItem, OrderItemPK>) orderItemRepository).saveAll(Arrays.asList(oi1,oi2,oi3,oi4));
 		
 		
-
+		Payment pay1 = new Payment(null, Instant.parse("2024-08-20T21:53:07Z"), o1);
+		o1.setPayment(pay1);
+		((ListCrudRepository<Order, Long>) orderRepository).saveAll(Arrays.asList(o1));
 	}
 	
 	
