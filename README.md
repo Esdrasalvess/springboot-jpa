@@ -75,6 +75,6 @@ PUT /users/{id}
   "email": "bob@gmail.com",
   "phone": "977557755"
 }
-##Deletar Usuário
+## Deletar Usuário
 DELETE /users/{id}
 
